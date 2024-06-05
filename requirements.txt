@@ -1,0 +1,5 @@
+matplotlib
+networkx==2.3
+PyYAML
+torch==2.0.1
+tqdm
