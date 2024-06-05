@@ -4,7 +4,7 @@ num_actions: 9
 grid_size: 60
 correct_prob: 0.7
 discount_factor: 0.99
-episodes: 10
+episodes: 100000
 max_steps: 500
 
 # Evaluation
