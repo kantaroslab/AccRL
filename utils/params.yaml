@@ -1,0 +1,53 @@
+# All-In-One Configuration File
+seed: 0
+num_actions: 9
+grid_size: 60
+correct_prob: 0.7
+discount_factor: 0.99
+episodes: 10
+max_steps: 500
+
+# Evaluation
+eval_folder: './output'
+
+save_gap: 3600 # every other x seconds
+save_epi: 1000 # every other x episodes
+
+case_name: "C"  # Coverage Task 
+ltl_task: "<>a99 && <>(a46 || a90) && <>a33 && (!a99 U a33) && []!obstacles"
+obstacle_list:
+- 'a15'
+- 'a73'
+- 'a24'
+- 'a88'
+
+# case_name: "D"  # Surveillance Task
+# ltl_task: "[]<>a90 && []<>a70 && []<>a80 && []<>a63 && []<>a88 && (!a88 U a80)&& []!obstacles"
+# obstacle_list:
+# - 'a32'
+# - 'a45'
+# - 'a46'
+# - 'a33'
+# - 'a34'
+# - 'a35'
+
+# case_name: "B"  # Reach Avoid Task
+# ltl_task: "<>a81 && <>a95 && <>a80 && <>a88 && <>a92 && []!obstacles"
+# obstacle_list:
+# - 'a5'
+# - 'a15'
+# - 'a54'
+# - 'a32'
+# - 'a24'
+# - 'a66'
+# - 'a42'
+# - 'a70'
+
+# case_name: "E"
+# ltl_task: "(<>a99 && <>a45 && <>a32 && []!obstacles) || (<>a18 && <>a72 && <>a4)"
+# obstacle_list:
+# - 'a64'
+# - 'a65'
+# - 'a66'
+# - 'a84'
+# - 'a85'
