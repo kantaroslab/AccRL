@@ -2,34 +2,39 @@
 
 ## How to use the code 
 
-#### Configuration
-All the task related configuration is located in `./utils/params.yaml`
+#### Input
+The inputs to the reinforcement learning algorithm are located in `./utils/params.yaml` that include:
 * LTL Task: `ltl_task` and `obstacle_list`
-* Grid Size: `grid_size`
-* Number of Episodes: `episodes`
-* Max Steps per Episode: `max_steps`
+* Grid size: `grid_size` (e.g., if grid_size=50, then the MDP models a 50x50 grid world resulting in an MDP with 2,500 states)
+* Number of episodes: `episodes`
+* Maximum number of steps per episode: `max_steps`
 
 #### System Requirement
 
-This repo needs to be run in Linux system, we tested on Ubuntu 20.04 using Python 3.8
-
-## Methods
+This repo was implemented using using Python 3.8 and tested on Ubuntu 20.04.
 
 #### Our Method
+To run our method, type:
 
-`python3 main.py --type 1`, where `1` can be replaced with 1~6, representing different decay rate of our method shown in paper.
+`python3 main.py --type X`, where `X` can take values from {1,2,3,4,5,6}. The value of X represents different decay rates of the parameters \epsilon, \delta_b, and \delta_e of our method. 
 
-* Notice LTL formula would not change when pick different type, only decay rate would change
-* `--type`
-    * Small MDP
-        * 1: Biased-1
-        * 2: Biased-2
-        * 3: Biased-3
-    * Big MDP
-        * 4: Biased-1
-        * 5: Biased-2
-        * 6: Biased-3
+* Values of X
+  * X = 1: Corresponds to Biased-1 used in [A] for the 10x10 and 20x20 MDPs
+  * X = 2: Corresponds to Biased-2 used in [A] for the 10x10 and 20x20 MDPs
+  * X = 3: Corresponds to Biased-3 used in [A] for the 10x10 and 20x20 MDPs
+  * X = 4: Corresponds to Biased-1 used in [A] for the 50x50 MDP
+  * X = 5: Corresponds to Biased-2 used in [A] for the 50x50 MDP
+  * X = 6: Corresponds to Biased-3 used in [A] for the 50x50 MDP
 
 #### Epsilon-Greedy Method
-
+To run our method with the biased part disabled (i.e., \delta_b=0), use the following command
 `python3 random_explore.py`
+
+#### Output
+The code will return a deterministic policy (greedy with respect to the Q value function) along with its satisfaction probability. The latter is computed using the unknown-to-the-system MDP transition probabilities.
+
+#### Reference
+[A] Y. Kantaros, J. Wang : `Sample Efficient Reinforcement Learning with Temporal Logic Objectives: Leveraging the Mission Specification to Guide Exploration' (under review)
+
+
+
