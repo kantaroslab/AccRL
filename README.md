@@ -1,4 +1,4 @@
-# Accelerated Reinforcement Learning
+# Sample-Efficient Reinforcement Learning with Temporal Logic Objectives: Leveraging the Task Specification to Guide Exploration
 
 ## How to use the code 
 
@@ -34,7 +34,7 @@ To run our method with the biased part disabled (i.e., \delta_b=0), use the foll
 The code will return a deterministic policy (greedy with respect to the Q value function) along with its satisfaction probability. The latter is computed using the unknown-to-the-system MDP transition probabilities.
 
 #### Reference
-[A] Y. Kantaros, J. Wang : `Sample Efficient Reinforcement Learning with Temporal Logic Objectives: Leveraging the Mission Specification to Guide Exploration' (under review)
+[A] Y. Kantaros, and J. Wang. "Sample-Efficient Reinforcement Learning with Temporal Logic Objectives: Leveraging the Task Specification to Guide Exploration." IEEE Transactions on Automatic Control (2024).
 
 
 
